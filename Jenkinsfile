@@ -10,6 +10,8 @@ node {
     def SFDC_HOST = env.SFDC_HOST_DH
     def JWT_KEY_CRED_ID = env.JWT_CRED_ID_DH
     def CONNECTED_APP_CONSUMER_KEY=env.CONNECTED_APP_CONSUMER_KEY_DH
+	def GIT_USERNAME = 'Preeti178'
+	def GIT_PASSWORD = 'AD57@12s'
 
     println 'KEY IS' 
     println JWT_KEY_CRED_ID
@@ -39,7 +41,13 @@ node {
 				rmsg = sh returnStdout: true, script: "sfdx force:mdapi:deploy -w 10 -d force-app/main/default/. -u ${HUB_ORG}"
 			}else{
 			   rmsg = bat returnStdout: true, script: "sfdx force:mdapi:retrieve -r ./mdapipkg -u ${HUB_ORG} -k ./force-app/main/default//package.xml"
-			}
+				
+				
+			withCredentials([gitUsernamePassword(credentialsId: JWT_KEY_CRED_ID, gitToolName: 'Default')]) {
+  bat 'git push'
+				
+}
+				
 			  
             printf rmsg
             println('Hello from a Job DSL script!')
