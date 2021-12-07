@@ -38,7 +38,7 @@ node {
 			if (isUnix()) {
 				rmsg = sh returnStdout: true, script: "sfdx force:mdapi:deploy -w 10 -d force-app/main/default/. -u ${HUB_ORG}"
 			}else{
-			   rmsg = bat returnStdout: true, script: "sfdx force:mdapi:retrieve -r ./mdapipkg -u ${HUB_ORG} -k ./package.xml"
+			   rmsg = bat returnStdout: true, script: "sfdx force:mdapi:retrieve -r ./mdapipkg -u ${HUB_ORG} -k ./force-app/main/default//package.xml"
 			}
 			  
             printf rmsg
