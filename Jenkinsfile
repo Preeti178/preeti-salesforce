@@ -48,7 +48,7 @@ node {
 				bat 'git config --global user.name "Preeti178"'
 				bat 'git add mdapipkg/'
 				bat 'git commit -m "push to git"'
- bat 'git push https://Preeti178:AD57@12s@github.com/Preeti178/SFDX-projectFinal.git HEAD:main'
+ bat 'git push https://github.com/Preeti178/SFDX-projectFinal.git HEAD:main'
 				
 			
 }
