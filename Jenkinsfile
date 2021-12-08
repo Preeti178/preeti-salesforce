@@ -44,7 +44,7 @@ node {
 				
 				
 			withCredentials([gitUsernamePassword(credentialsId: 'c7fff462-5d29-472d-abb0-b653de59d291', gitToolName: 'Default')]) {
-  bat 'git push origin HEAD:main'
+  bat 'git push origin main'
 				
 }
 				
