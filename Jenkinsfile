@@ -45,8 +45,7 @@ node {
 				
 			withCredentials([gitUsernamePassword(credentialsId: 'c7fff462-5d29-472d-abb0-b653de59d291', gitToolName: 'Default')]) {
 				bat 'git commit -m "push to git"'
- 
-				
+ bat 'git push origin <local-branch>:<remote-branch>'
 }
 				
 			  
