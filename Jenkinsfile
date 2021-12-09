@@ -40,7 +40,7 @@ node {
 			if (isUnix()) {
 				rmsg = sh returnStdout: true, script: "sfdx force:mdapi:deploy -w 10 -d force-app/main/default/. -u ${HUB_ORG}"
 			}else{
-			   rmsg = bat returnStdout: true, script: "sfdx force:source:retrieve -r ./mdapipkg -u ${HUB_ORG} -x ./force-app/main/default//package.xml"
+			   rmsg = bat returnStdout: true, script: "sfdx force:source:retrieve -u ${HUB_ORG} -x ./force-app/main/default//package.xml -w 10"
 			
 				
 			withCredentials([gitUsernamePassword(credentialsId: 'c7fff462-5d29-472d-abb0-b653de59d291', gitToolName: 'Default')]) {
