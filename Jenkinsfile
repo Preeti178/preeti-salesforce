@@ -41,7 +41,7 @@ node {
 				rmsg = sh returnStdout: true, script: "sfdx force:mdapi:deploy -w 10 -d force-app/main/default/. -u ${HUB_ORG}"
 			}else{
 			   rmsg = bat returnStdout: true, script: "sfdx force:mdapi:retrieve -r ./mdapipkg  -u ${HUB_ORG} -k ./force-app/main/default//package.xml"
-				bat script:"Expand-Archive -o ./mdapipkg/unpackaged.zip -d ./mdapipkg/"
+				
 				
 			withCredentials([gitUsernamePassword(credentialsId: 'c7fff462-5d29-472d-abb0-b653de59d291', gitToolName: 'Default')]) {
 				bat 'git config --global user.email "preeti.singh@metacube.com"'
